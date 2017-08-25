@@ -1,12 +1,14 @@
 from Data import CitiesUSA
 import random
 
+
 class Tsp:
     def __init__(self):
         data = CitiesUSA()
         self.cities = data.cities
         self.numberOfCities = len(self.cities)
         self.distances = data.distances
+        self.solution = self.generateSolution()
 
     def distance(self, city_a, city_b):
         """
@@ -15,7 +17,7 @@ class Tsp:
         :param city_b: int
         :return: int
         """
-        return self.distances[city_a, city_b]
+        return self.distances[city_a][city_b]
 
     def generateSolution(self):
         """
@@ -27,12 +29,22 @@ class Tsp:
             solution.append(i)
 
         random.shuffle(solution)
-
+        print(solution)
         return solution
 
+    def fitness(self):
+        """
+        Compute the total distance if we are visiting all cities in the order of actual solution
+        :return: int
+        """
+        fitness = 0
+        for i in range(self.numberOfCities - 1):
+            fitness += self.distance(self.solution[i], self.solution[i+1])
 
+        return fitness
 
 
 
 
 tsp = Tsp()
+print(tsp.fitness())
