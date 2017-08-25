@@ -1,8 +1,8 @@
 from Data import CitiesUSA
-
+import random
 
 class Tsp:
-    def __init__(self, ):
+    def __init__(self):
         data = CitiesUSA()
         self.cities = data.cities
         self.numberOfCities = len(self.cities)
@@ -16,6 +16,21 @@ class Tsp:
         :return: int
         """
         return self.distances[city_a, city_b]
+
+    def generateSolution(self):
+        """
+        Generate a random solution
+        :return: int array
+        """
+        solution = []
+        for i in range(self.numberOfCities):
+            solution.append(i)
+
+        random.shuffle(solution)
+
+        return solution
+
+
 
 
 
