@@ -43,8 +43,3 @@ class Tsp:
 
         return fitness
 
-
-
-
-tsp = Tsp()
-print(tsp.fitness())
