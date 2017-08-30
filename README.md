@@ -10,3 +10,8 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
 ```
 python Client.py
 ```
+
+## Rebuild proto files
+```
+python -m grpc_tools.protoc -I=./proto --python_out=./protoGenerated --grpc_python_out=./protoGenerated proto/hcfi.proto
+```
