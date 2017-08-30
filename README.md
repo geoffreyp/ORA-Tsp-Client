@@ -7,9 +7,16 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
 [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 
 ## How use the client ?
+### Use hillclimber algorithm :
 ```
-python Client.py
+python Client.py -h
 ```
+
+### Use tabou search algorithm : (in the next release of the [Operational Research API](https://github.com/geoffreyp/OperationalResearchWebAPI))
+```
+python Client.py -t
+```
+
 
 ## Rebuild proto files
 ```

@@ -29,7 +29,7 @@ class Tsp:
             solution.append(i)
 
         random.shuffle(solution)
-        print(solution)
+
         return solution
 
     def fitness(self):
@@ -39,7 +39,7 @@ class Tsp:
         """
         fitness = 0
         for i in range(self.numberOfCities - 1):
-            fitness += self.distance(self.solution[i], self.solution[i+1])
+            fitness += self.distance(int(self.solution[i]), int(self.solution[i+1]))
 
         return fitness
 
