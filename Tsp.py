@@ -43,3 +43,12 @@ class Tsp:
 
         return fitness
 
+    def toString(self):
+        """
+        Return the solution with the OR-API format
+        """
+        res = ''
+        for i in range(0, int(self.numberOfCities)):
+            res += str(self.solution[i]) + '-'
+
+        return res[:-1]
